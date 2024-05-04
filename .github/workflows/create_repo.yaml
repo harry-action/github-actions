@@ -28,7 +28,7 @@ jobs:
         run: |
           gh repo create harry-action/${{ inputs.prefix }}-${{ inputs.name }} --public --add-readme
       - name: slack
-        id: always()
+        if: always()
         uses: slackapi/slack-github-action@v1.26.0
         with:
           payload: |
